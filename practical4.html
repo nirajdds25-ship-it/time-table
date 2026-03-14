@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+        }
+        caption {
+            caption-side: top;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tfoot td {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Records</h1>
+
+    <table>
+        <caption>Semester 1 Student Record</caption>
+        <thead>
+            <tr>
+                <th scope="col">Roll No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Math</th>
+                <th scope="col">Science</th>
+                <th scope="col">English</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>John Doe</td>
+                <td>85</td>
+                <td>90</td>
+                <td>88</td>
+                <td>263</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Jane Smith</td>
+                <td>78</td>
+                <td>82</td>
+                <td>80</td>
+                <td>240</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Robert Brown</td>
+                <td>92</td>
+                <td>88</td>
+                <td>95</td>
+                <td>275</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Emily Davis</td>
+                <td>70</td>
+                <td>75</td>
+                <td>78</td>
+                <td>223</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Average Marks</td>
+                <td>250.25</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
