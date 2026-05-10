@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI Card</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f0f0f0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .container{
+      width:300px;
+      background:#0f1830;
+      padding:20px;
+      border-radius:18px;
+      color:#fff;
+      box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .section{
+      margin-bottom:28px;
+    }
+
+    .title{
+      font-size:15px;
+      font-weight:bold;
+      margin-bottom:12px;
+    }
+
+    .drag-label{
+      background:#ff5ebc;
+      color:#fff;
+      padding:4px 10px;
+      border-radius:6px;
+      font-size:12px;
+      margin-left:6px;
+    }
+
+    .drop-box{
+      border:2px dashed #3bb3ff;
+      border-radius:10px;
+      height:38px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#d6d6d6;
+      font-size:13px;
+    }
+
+    .btn{
+      width:100%;
+      height:38px;
+      border:none;
+      border-radius:8px;
+      background:#3ec1ff;
+      color:#00152b;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#28b4f7;
+    }
+
+    .coords{
+      margin-top:10px;
+      font-size:14px;
+      color:#d0d0d0;
+    }
+
+    .input{
+      width:100%;
+      height:38px;
+      border:none;
+      border-radius:5px;
+      padding:10px;
+      outline:none;
+      background:#f1f1f1;
+    }
+
+    .stored{
+      margin-top:12px;
+      color:#d0d0d0;
+      font-size:14px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Drag & Drop -->
+    <div class="section">
+      <div class="title">
+        1. Drag & Drop
+        <span class="drag-label">DRAG</span>
+      </div>
+
+      <div class="drop-box">
+        DROP HERE
+      </div>
+    </div>
+
+    <!-- Geolocation -->
+    <div class="section">
+      <div class="title">2. Geolocation</div>
+
+      <button class="btn" onclick="getLocation()">
+        Get Location
+      </button>
+
+      <div class="coords" id="coords">
+        Coords: --
+      </div>
+    </div>
+
+    <!-- Web Storage -->
+    <div class="section">
+      <div class="title">3. Web Storage</div>
+
+      <input 
+        type="text" 
+        class="input" 
+        id="textInput"
+        placeholder="Save text..."
+      />
+
+      <div class="stored" id="storedText">
+        Stored:
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Geolocation
+    function getLocation() {
+      const coords = document.getElementById("coords");
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            coords.innerHTML =
+              "Coords: " +
+              position.coords.latitude.toFixed(4) +
+              ", " +
+              position.coords.longitude.toFixed(4);
+          },
+          () => {
+            coords.innerHTML = "Location access denied.";
+          }
+        );
+      } else {
+        coords.innerHTML = "Geolocation not supported.";
+      }
+    }
+
+    // Web Storage
+    const input = document.getElementById("textInput");
+    const stored = document.getElementById("storedText");
+
+    // Load saved text
+    stored.innerHTML = "Stored: " + (localStorage.getItem("savedText") || "");
+
+    input.addEventListener("keyup", () => {
+      localStorage.setItem("savedText", input.value);
+      stored.innerHTML = "Stored: " + input.value;
+    });
+  </script>
+
+</body>
+</html>
