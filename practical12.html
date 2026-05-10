@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Explore</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#ececec;
+      padding:40px 0;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      background:#fff;
+    }
+
+    /* Navbar */
+    .navbar{
+      background:#1c1f26;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 30px;
+    }
+
+    .logo{
+      font-size:18px;
+      font-weight:bold;
+      letter-spacing:1px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .btn{
+      background:#1e90ff;
+      color:#fff;
+      padding:8px 14px;
+      border-radius:4px;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      height:300px;
+      background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop')
+      center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.3);
+    }
+
+    .hero h1{
+      position:relative;
+      font-size:42px;
+      font-weight:bold;
+    }
+
+    /* Section */
+    .section{
+      padding:50px 40px;
+      text-align:center;
+    }
+
+    .section h2{
+      margin-bottom:30px;
+      color:#333;
+    }
+
+    /* Cards */
+    .cards{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      width:280px;
+      background:#fff;
+      border:1px solid #ddd;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      text-align:left;
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:15px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#222;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#666;
+      margin-bottom:15px;
+      line-height:1.5;
+    }
+
+    .card button{
+      padding:8px 14px;
+      border:none;
+      background:#1e90ff;
+      color:#fff;
+      border-radius:4px;
+      cursor:pointer;
+    }
+
+    /* Footer */
+    footer{
+      background:#1c1f26;
+      color:#fff;
+      padding:40px;
+      margin-top:40px;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:30px;
+    }
+
+    .footer-box{
+      flex:1;
+      min-width:220px;
+    }
+
+    .footer-box h3{
+      margin-bottom:15px;
+    }
+
+    .footer-box p,
+    .footer-box a{
+      color:#ccc;
+      font-size:14px;
+      text-decoration:none;
+      line-height:1.8;
+    }
+
+    .newsletter{
+      display:flex;
+      margin-top:10px;
+    }
+
+    .newsletter input{
+      flex:1;
+      padding:10px;
+      border:none;
+      outline:none;
+    }
+
+    .newsletter button{
+      padding:10px 16px;
+      border:none;
+      background:#1e90ff;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .copyright{
+      text-align:center;
+      margin-top:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      color:#bbb;
+      font-size:13px;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:30px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">EXPLORE</div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">About</a>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Mountain Retreats</h1>
+    </div>
+
+    <!-- Destinations -->
+    <section class="section">
+      <h2>Popular Destinations</h2>
+
+      <div class="cards">
+
+        <!-- Card 1 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?q=80&w=1000&auto=format&fit=crop" alt="Venice">
+
+          <div class="card-content">
+            <h3>Venice, Italy</h3>
+
+            <p>
+              Experience the beauty of canals, gondolas,
+              and historic architecture.
+            </p>
+
+            <button>Learn More</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000&auto=format&fit=crop" alt="Kyoto">
+
+          <div class="card-content">
+            <h3>Kyoto, Japan</h3>
+
+            <p>
+              Explore ancient temples and traditional
+              Japanese culture.
+            </p>
+
+            <button>Learn More</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1000&auto=format&fit=crop" alt="Bali">
+
+          <div class="card-content">
+            <h3>Bali, Indonesia</h3>
+
+            <p>
+              Relax on beautiful beaches and enjoy
+              tropical island vibes.
+            </p>
+
+            <button>Learn More</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+      <div class="footer-content">
+
+        <div class="footer-box">
+          <h3>EXPLORE</h3>
+          <p>
+            Discover amazing destinations around the world
+            with unforgettable experiences.
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Links</h3>
+
+          <p><a href="#">Home</a></p>
+          <p><a href="#">Destinations</a></p>
+          <p><a href="#">Travel Tips</a></p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Newsletter</h3>
+
+          <div class="newsletter">
+            <input type="email" placeholder="Enter your email">
+            <button>Join</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2025 Explore Agency. All Rights Reserved.
+      </div>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
